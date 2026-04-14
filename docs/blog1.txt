@@ -1,1 +1,1 @@
-blog one new text 
+blog one new text  This is an appended text.

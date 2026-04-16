@@ -16,6 +16,12 @@ const blogs = [
 app.get('/', (req, res) => {
   res.render('home', { title: 'Home', blogs: blogs });
 });
+app.get('/about', (req, res) => {
+  res.render('about', { title: 'About' });
+});
+app.get('/blogs/create', (req, res) => {
+  res.render('create', { title: 'Create a new blog' });
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at port:${port}`);

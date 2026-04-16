@@ -22,7 +22,9 @@ app.get('/about', (req, res) => {
 app.get('/blogs/create', (req, res) => {
   res.render('create', { title: 'Create a new blog' });
 });
-
+app.use((req, res) => {
+  res.status(404).render('404', { title: '404' });
+});
 app.listen(port, () => {
   console.log(`Example app listening at port:${port}`);
 });

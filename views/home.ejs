@@ -7,6 +7,14 @@
 </head>
 <body>
     <%- include('navbar') %>
-    <h1>home section </h1>
+    <h1>All blogs</h1>
+    <div class="blogs">
+        <% blogs.forEach(blog => { %>
+            <div class="blog">
+                <h3><%= blog.title %></h3>
+                <p><%= blog.snippet %></p>
+            </div>
+        <% }); %>
+    </div>
 </body>
 </html>

@@ -2,8 +2,19 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+app.set('view engine', 'ejs');
+// app.set('views', __dirname + '/views');
+  
+
+//array of blogs
+
+const blogs = [
+    {title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur'},
+    {title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur'},
+    {title: 'How to defeat bowser', snippet: 'Lorem ipsum dolor sit amet consectetur'},
+]
 app.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>');
+  res.render('home', { title: 'Home', blogs: blogs });
 });
 
 app.listen(port, () => {

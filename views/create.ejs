@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=title%></title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <%- include('navbar') %>
-    <h1>Create a new blog</h1>
-    <form action="">
-        <label for="title">Blog title:</label>
-        <input type="text" id="title" name="title">
-        <label for="snippet">Blog snippet:</label>
-        <input type="text" id="snippet" name="snippet">
-        <label for="body">Blog body:</label>
-        <textarea id="body" name="body"></textarea>
-        <button type="submit">Submit</button>
-    </form>
+
+    <main class="container">
+        <h1>Create a new blog</h1>
+        <form action="">
+            <label for="title">Blog title:</label>
+            <input type="text" id="title" name="title">
+            <label for="snippet">Blog snippet:</label>
+            <input type="text" id="snippet" name="snippet">
+            <label for="body">Blog body:</label>
+            <textarea id="body" name="body"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
 </body>
 </html>

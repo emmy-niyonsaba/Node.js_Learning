@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "node.js_learning",
+  "version": "1.0.0",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmy-niyonsaba/Node.js_Learning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmy-niyonsaba/Node.js_Learning/issues"
+  },
+  "homepage": "https://github.com/emmy-niyonsaba/Node.js_Learning#readme",
+  "description": ""
+}

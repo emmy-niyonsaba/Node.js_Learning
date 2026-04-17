@@ -24,7 +24,7 @@ app.set('view engine', 'ejs');
   
 
 //array of blogs
-
+// 
 const blogs = [
     {title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur'},
     {title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur'},

@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 const port = 3000;
+// 
 const dbURI = 'mongodb+srv://emmyson:<emmy123!@#>@cluster0.fgvybye.mongodb.net/';
 mongoose.connect(dbURI)
   .then((result) => {

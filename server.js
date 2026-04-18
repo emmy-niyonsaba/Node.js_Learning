@@ -16,7 +16,7 @@ mongoose.connect(dbURI)
   .catch((err) => {
     console.log(err);
   });
-
+// this way to set the public foler for node while it is running 
 app.use(express.static('public'));
 
 app.set('view engine', 'ejs');

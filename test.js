@@ -21,7 +21,7 @@ const write =()=>{
 }
 // write()
 
-/
+// 
 const update =()=>{
     fs.appendFile('./docs/blog1.txt', ' This is an appended text.', (err) => {
     if (err) {

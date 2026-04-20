@@ -2,12 +2,19 @@ const express = require('express');
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes');
 
-require('dotenv').config();
+try {
+  require('dotenv').config();
+} catch {
+  // dotenv is optional; app can still run with environment variables set externally.
+}
 const app = express();
 
 const port = 3000;
 
-const dbURI ='mongodb+srv://emmyson:emmy1234@cluster0.fgvybye.mongodb.net/mydb?retryWrites=true&w=majority';
+const dbURI = process.env.MONGODB_URI || 'mongodb+srv://emmyson:emmy1234@cluster0.fgvybye.mongodb.net/mydb?retryWrites=true&w=majority';
+if (!process.env.MONGODB_URI) {
+  console.warn('MONGODB_URI is not set. Using the fallback connection string in server.js.');
+}
 if (!dbURI) {
   console.error('Missing MONGODB_URI. Create a .env file (see .env.example) with your MongoDB connection string.');
   process.exit(1);

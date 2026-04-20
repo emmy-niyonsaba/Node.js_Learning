@@ -20,10 +20,24 @@
                         <p><%= blog.snippet %></p>
                         <p><%= blog.body %></p>
                     
-                        <button><a href="/">Back</a></button>
+                        <button><a href="/blogs">Back</a></button>
+                        <button ><a  class="delete-btn" data-doc="<%= blog._id %>">Delete</a></button>
                 </div>
             <% }); %>
         </div>
     </main>
+    <script>
+        const deleteBtn = document.querySelector('.delete-btn');
+        deleteBtn.addEventListener('click', (e) => {
+            const id = e.target.getAttribute('data-doc');
+            fetch(`/blogs/${id}`, {
+                method: 'DELETE'
+            }).then(res => res.json())
+            .then(data => {
+              
+                window.location.href = '/blogs';
+            }).catch(err => console.log(err));
+        })
+    </script>
 </body>
 </html>

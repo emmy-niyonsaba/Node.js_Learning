@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const Blog = require('./models/blog');
+const blogRoutes = require('./routes/blogRoutes');
+
 require('dotenv').config();
 const app = express();
 
@@ -28,43 +29,14 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  Blog.find().sort({ createdAt: -1 })
-    .then((blogs) => {  
-  res.render('home', { title: 'All Blogs', blogs: blogs });
+  res.redirect('/blogs');
 });
-})
-
 app.get('/about', (req, res) => {
   res.render('about', { title: 'About' });
 });
 
 //blogs router
-app.get('/blogs/create', (req, res) => {
-  res.render('create', { title: 'Create a new blog' });
-});
-app.post('/blogs', (req, res) => {
-  const blog = new Blog(req.body);
-  blog.save()
-    .then(() => {
-      res.redirect('/');
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Failed to save blog');
-    });
-});
-
-app.get('/blogs/:id', (req, res) => {
-  const id = req.params.id;
-  Blog.findById(id)
-    .then((blog) => {
-      res.render('details', { title: blog.title, blog: [blog] });
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Failed to fetch blog');
-    });
-});
+app.use('/blogs',blogRoutes);
 
 
 app.use((req, res) => {

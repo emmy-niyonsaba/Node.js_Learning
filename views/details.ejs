@@ -11,16 +11,16 @@
     <%- include('navbar') %>
 
     <main class="container">
-        <h1>All blogs</h1>
+        <h1>Blog Details</h1>
         <div class="blogs">
-            <% blogs.forEach(blog => { %>
+            <% blog.forEach(blog => { %>
                 <div class="blog">
-                    <a href="/blogs/<%= blog._id %>">
+        
                         <h2><%= blog.title %></h2>
                         <p><%= blog.snippet %></p>
                         <p><%= blog.body %></p>
-                    </a>
-
+                    
+                        <button><a href="/">Back</a></button>
                 </div>
             <% }); %>
         </div>
